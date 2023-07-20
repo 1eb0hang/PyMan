@@ -4,6 +4,16 @@ attemptNo = 1
 correct = False
 end = False
 
+def LetterCount(strWord: str) -> int:
+    result = 0
+    for i in strWord:
+        result +=1
+    
+    return result
+
+count = LetterCount(word)
+print("\nThe word has " + str(count) +" letters\n")
+
 while(end == False and correct == False):
     guess = input("Please guess the word:\n -> ")
     
@@ -11,8 +21,6 @@ while(end == False and correct == False):
         print("Correct!\n")
         correct = True
         end = True
-    elif(guess == "\n"):
-        print("Unfortunatly that is incorrect :(\n")
        
     else:
         print("Unfortunatly that is incorrect :(\n")
