@@ -1,7 +1,7 @@
-from os import system, name
 from enum import Enum
 
-import word
+from layout import *
+from word import *
 
 word = "hippopotamus"
 attempts = 7
@@ -15,17 +15,7 @@ class Guess(Enum):
     WORD = 2
 
 
-def clear():
- 
-    # for windows
-    if name == 'nt':
-        _ = system('cls')
- 
-    # for mac and linux(here, os.name is 'posix')
-    else:
-        _ = system('clear')
-
-count = word.strlen(word)
+count = strlen(word)
 #print("\nThe word has " + str(count) +" letters\n")
 
 
