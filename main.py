@@ -1,4 +1,7 @@
+from os import system, name
 from enum import Enum
+
+import word
 
 word = "hippopotamus"
 attempts = 7
@@ -12,15 +15,19 @@ class Guess(Enum):
     WORD = 2
 
 
-def strlen(strWord: str) -> int:
-    result = 0
-    for i in strWord:
-        result +=1
-    
-    return result
+def clear():
+ 
+    # for windows
+    if name == 'nt':
+        _ = system('cls')
+ 
+    # for mac and linux(here, os.name is 'posix')
+    else:
+        _ = system('clear')
 
-count = strlen(word)
-print("\nThe word has " + str(count) +" letters\n")
+count = word.strlen(word)
+#print("\nThe word has " + str(count) +" letters\n")
+
 
 valid = False
 while(valid == False):
@@ -34,7 +41,12 @@ while(valid == False):
     else:
         print("You have entered an invalid input\n")
 
-print(gType)
+clear()
+
+#print(name)
+#print(gType)
+
+
 
 #while(end == False and correct == False):
 #    guess = input("Please guess the word:\n>> ")
