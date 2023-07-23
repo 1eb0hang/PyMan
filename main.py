@@ -1,7 +1,5 @@
-from enum import Enum
-
-from layout import *
-from word import *
+from files import layout
+from files import word as words
 
 word = "hippopotamus"
 attempts = 7
@@ -10,12 +8,8 @@ correct = False #check if guess is correct
 valid = False #check if input is valid; will be reset when nessesary
 end = False  #check if attempts have been used up
 
-class Guess(Enum):
-    LETTER = 1
-    WORD = 2
 
-
-count = strlen(word)
+count = words.strlen(word)
 #print("\nThe word has " + str(count) +" letters\n")
 
 
@@ -25,13 +19,15 @@ while(valid == False):
     guessType = input("Would you like to guess a letter or a word:\n[1] Letter\n[2] Word\n>> ")
     
     if(guessType == "1" or guessType == "2"):
-        gType = Guess(int(guessType))
+        gType = layout.Guess(int(guessType))
         print(type(type))
         valid = True
     else:
         print("You have entered an invalid input\n")
 
-clear()
+
+layout.clear()
+layout.PlayScreen(gType, attempts)
 
 #print(name)
 #print(gType)

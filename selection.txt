@@ -1,0 +1,23 @@
+G = Some guess type value
+	- This will determine the screen type
+
+- Selection
+	- Letter
+	correct?
+		- Yes -> Show letters
+			All Letters?
+			- Yes -> Win Screen!
+			- No -> Selection ^
+			
+		- No -> -1 chance
+			Chance > 0
+			 - Yes -> Selection ^
+			 - No -> Lose Screen!
+	
+	-Word
+	correct
+		- Yes -> Win Screen!
+		- No -> -1 Chance
+			Chance > 0
+			- Yes -> Selection ^
+			- No -> Lose Screen!
